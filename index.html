@@ -52,7 +52,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DRACO: A Denoising Reconstruction Autoencoder for Cryo-EM</h1>
+          <h1 class="title is-1 publication-title">DRACO: A Denoising-Reconstruction Autoencoder for Cryo-EM</h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
@@ -79,8 +79,14 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>ShanghaiTech University<br><sup>2</sup>Cellverse Co., Ltd</span>
-            <span class="contribution"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Indicates Equal Contribution</small></span>
+            <!-- <span class="author-block"><sup>1</sup>ShanghaiTech University<br><sup>2</sup>Cellverse Co., Ltd</span> -->
+            <span class="author-block" style="display: inline-block; margin-right: 100px;">
+              <sup>1</sup>ShanghaiTech University
+            </span>
+            <span class="author-block" style="display: inline-block;">
+              <sup>2</sup>Cellverse Co., Ltd
+            </span>
+            <span class="contribution"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Indicates Corresponding Author</small></span>
           </div>
 
           <div class="column has-text-centered">
@@ -147,7 +153,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Foundation models in computer vision have demonstrated exceptional performance in zero-shot and few-shot tasks by extracting multi-purpose features from large-scale datasets through self-supervised pre-training methods. However, these models often overlook the severe corruption in cryogenic electron microscopy (cryo-EM) images by high-level noises. We introduce DRACO, a Denoising-Reconstruction Autoencoder for CryO-EM, inspired by the Noise2Noise (N2N) approach. By processing cryo-EM movies into odd and even images and treating them as independent noisy observations, we apply a denoising-reconstruction hybrid training scheme. We mask both images to create denoising and reconstruction tasks. For DRACO's pre-training, the quality of the dataset is essential, we hence build a high-quality, diverse dataset from an uncurated public database, including over 270,000 movies or micrographs. After pre-training, DRACO naturally serves as a generalizable cryo-EM image denoiser and a foundation model for various cryo-EM downstream tasks. DRACO demonstrates the best performance in denoising, micrograph curation, and particle picking tasks compared to state-of-the-art baselines. We will release the code, pre-trained models, and the curated dataset to stimulate further research.
+            Foundation models in computer vision have demonstrated exceptional performance in zero-shot and few-shot tasks by extracting multi-purpose features from large-scale datasets through self-supervised pre-training methods. However, these models often overlook the severe corruption in cryogenic electron microscopy (cryo-EM) images by high-level noises. We introduce <b>DRACO</b>, a <b>D</b>enoising-<b>R</b>econstruction <b>A</b>utoencoder for <b>C</b>ry<b>O</b>-EM, inspired by the Noise2Noise (N2N) approach. By processing cryo-EM movies into odd and even images and treating them as independent noisy observations, we apply a denoising-reconstruction hybrid training scheme. We mask both images to create denoising and reconstruction tasks. For DRACO's pre-training, the quality of the dataset is essential, we hence build a high-quality, diverse dataset from an uncurated public database, including over 270,000 movies or micrographs. After pre-training, DRACO naturally serves as a generalizable cryo-EM image denoiser and a foundation model for various cryo-EM downstream tasks. DRACO demonstrates the best performance in denoising, micrograph curation, and particle picking tasks compared to state-of-the-art baselines. We will release the code, pre-trained models, and the curated dataset to stimulate further research.
           </p>
         </div>
       </div>
@@ -161,15 +167,15 @@
 <section class="hero is-small"></section>
   <div class="container is-max-desktop">
     <div class="container">
-        <div class="item">
+        <div class="item" style="background-color: #eaeaea;padding: 10px; margin-bottom: 20px; border-radius: 5px;">
           <img src="static/images/denoise.png" alt="MY ALT TEXT"/>
             We visualize the denoising results of DRACO and state-of-the-art baselines. Our results show the most significant SNR improve- ment without the loss of the particle structure details. In contrast, Low-pass leads to a severe blur on particles, MAE introduces severe patch-wise artifacts and Topaz only shows either minor SNR improvements or blurred results.
         </div>
-        <div class="item">
+        <div class="item" style="background-color: #eaeaea;padding: 10px; margin-bottom: 20px; border-radius: 5px;">
           <img src="static/images/picking.png" alt="MY ALT TEXT"/>
             We show the picking results of DRACO and baselines on the test datasets range from small transport proteins to huge ribosomes. Blue, red, and yellow circles denote true positives, false positives, and false negatives, respectively.
         </div>
-        <div class="item">
+        <div class="item" style="background-color: #eaeaea;padding: 10px; margin-bottom: 20px; border-radius: 5px;">
           <img src="static/images/et.png" alt="MY ALT TEXT"/>
             Denoising cryo-ET HIV tilt series with DRACO. Figure a and b show the HIV tilt series before and after DRACO's denoising process. Using IMOD, we reconstruct 3D volumes of HIV from both the original and denoised series, showing their slice in Figures c and d. Note the horizontal stripes in these images, which are artifacts due to the missing wedge issue in cryo-ET. Figure e shows a denoised slice from Figure c by DRACO.
         </div>
